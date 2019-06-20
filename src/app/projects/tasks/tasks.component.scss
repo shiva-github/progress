@@ -1,0 +1,129 @@
+.task {
+	.tasks-table {	
+		border-bottom: 1px solid #333;
+		tr th{
+			background-color: #333;
+			color: #fff;
+		}
+	}
+
+	.tasks-table .container {
+		display: block;
+		position: relative;
+		padding-left: 30px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		/* Hide the browser's default checkbox */
+		input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+		}
+		/* Create a custom checkbox */
+		.checkmark {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			height: 20px;
+			width: 20px;
+			background-color: #aaa;
+
+			/* Create the checkmark/indicator (hidden when not checked) */
+			&:after {
+				content: "";
+				position: absolute;
+				display: none;
+				left: 7px;
+				top: 0px;
+				width: 8px;
+				height: 15px;
+				border: solid #333;
+				border-width: 0 3px 3px 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+		}
+		&:hover input ~ .checkmark {
+			background-color: #888;
+		}
+		/* When the checkbox is checked, add a blue background */
+		input:checked ~ .checkmark {
+			background-color: #6cf;
+		}
+		/* Show the checkmark when checked */
+		input:checked ~ .checkmark:after {
+			display: block;
+		}
+		/* Style the checkmark/indicator */
+	}
+	.table-hover tbody tr:last-child:hover {
+		background-color: #fff;
+	}
+
+	tbody tr a {
+		text-decoration: none;
+		color: #782a1d;
+		font-weight: bold;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	tbody tr .created-by {
+		color: #a27f47;
+		font-size: 12px;
+	}
+
+
+	@media only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		tr { border: 1px solid #ddd;margin-top: 15px; }
+
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #ddd; 
+			position: relative;
+			padding-left: 50%; 
+			vertical-align: middle;
+			
+		}
+
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+		*/
+		td:nth-of-type(1):before { font-weight: bold; content: "Title"; }
+		td:nth-of-type(2):before { font-weight: bold; content: "Tag"; }
+		td:nth-of-type(3):before { font-weight: bold; content: "Content"; }
+		td:nth-of-type(4):before { font-weight: bold; content: "Delete Task"; }
+	}
+}

@@ -1,0 +1,49 @@
+
+<div class="container projects-main">
+	<div class="card">
+		<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+		<div class="card-body">
+			<h5 class="card-title heading-border">PROJECTS</h5>
+
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Projects</li>
+				</ol>
+			</nav>
+			<div class="row">
+				<div class="col-sm-12">
+					<accordion>
+						<accordion-group *ngFor="let group of project_data" [heading]="group.title" class="accordion-tab">
+							<p>{{ group?.content }}</p>
+							<p><a routerLink="{{group?.link}}" routerLinkActive="active">View Project</a></p>
+							<div class="created"><span title="disabled" class="icon"><img src="/assets/images/edit.svg" width="20"></span><span title="disabled" class="icon"><img src="/assets/images/delete.svg" width="20"></span><span>Created by </span><span><strong>{{ group?.username }}</strong></span></div>
+						</accordion-group>
+					</accordion>
+				</div>
+				<div class="col-md-12">
+					<label>Project Title: </label><br>
+					<input type="text" class="form-control" placeholder="title" [(ngModel)]='projectName'>
+				</div>
+				<div class="col-md-12 mt-2">
+					<label>Project Description: </label><br>
+					<textarea  class="form-control" placeholder="content" [(ngModel)]="projectDescription"></textarea> 
+				</div>
+				<div class="col-sm-12 mt-4 mb-3">
+					<button type="button" class=" btn btn-primary custom-btn btn-sm" (click)="addProject()">Add Project</button>
+				</div>
+			</div>
+			<div class="row" *ngIf='last_page_project != 1'>
+				<div class="col-sm-12">
+					<span class="float-right"><span>{{current_page_project}}</span>/<span>{{last_page_project}}</span></span>
+				</div>
+				<div class="col-sm-12" >
+					<ul class="pagination justify-content-end" style="margin:20px 0">
+						<li class="page-item"><a class="page-link" href="javascript:void(0)" (click)="pageChange(-1)">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="javascript:void(0)" (click)="pageChange(1)">Next</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

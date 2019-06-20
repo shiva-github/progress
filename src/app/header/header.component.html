@@ -1,0 +1,54 @@
+<div class="header opacity">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" routerLink="/home">Fire</a>
+      <button class="navbar-toggler" type="button" (click)="toggleMenu()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" [ngClass]="{'show': mobileToggle}" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home"><span>Home</span></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/qrcode">QR-Code</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/projects">Projects</a>
+          </li>
+          <li class="nav-item d-sm-block d-md-block d-lg-none d-xl-none" routerLinkActive="active">
+            <a class="nav-link" href="javascript:void(0);" routerLink="/profile">Profile</a>
+          </li>
+          <li class="nav-item d-sm-block d-md-block d-lg-none d-xl-none" routerLinkActive="active">
+            <a class="nav-link" href="javascript:void(0);" routerLink="/chat">Chat</a>
+          </li>
+          <li class="nav-item d-sm-block d-md-block d-lg-none d-xl-none" routerLinkActive="active">
+            <a class="nav-link" href="javascript:void(0);" (click)="logoutAccount()">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-sm-none d-md-none d-lg-block d-xl-block d-none">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item primary" routerLinkActive="active">
+            <a class="nav-link" href="javascript:void(0);" (click)="playAudio()"><img [ngClass]="{'bell-ring': incomingNotification}" src="/assets/images/notification.svg" width="16"></a>
+            <ul class="sub-menu">
+              <li class="nav-item"><a class="nav-link" href="javascript:void(0);" routerLink="/chat">Chat</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item primary" routerLinkActive="active">
+            <a class="nav-link" href="javascript:void(0);"><img src="/assets/images/user.svg" width="20"></a>
+            <ul class="sub-menu">
+              <li class="nav-item"><a class="nav-link" href="javascript:void(0);" routerLink="/profile">Profile</a></li>
+              
+              <li class="nav-item"><a class="nav-link" href="javascript:void(0);" (click)="logoutAccount()">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

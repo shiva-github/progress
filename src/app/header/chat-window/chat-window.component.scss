@@ -1,0 +1,135 @@
+.chat-section {
+  .search-user {
+    width: 100%;
+  }
+  .user-msg-box {
+    width: calc(100% - 50px);
+    float: left;
+    border-right: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    outline: none;
+    box-shadow: none;
+    &:focus + .submit-msg {
+      border-color: #80bdff;
+    }
+  }
+  
+  .submit-msg {
+    width: 40px;
+    float: left;
+    border-left: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    img {
+      width: 100%;
+      margin-bottom: 4px;
+    }
+    &:focus {
+      border-color: #ced4da;
+    }
+  }
+  .inner-card-body {
+    max-height: 300px;
+    min-height: 300px;
+    overflow-y: auto;
+    padding: 0px;
+  }
+  .single-user {
+    width: 100%;
+    .ico {
+      width: 50px;
+      float: left;
+      margin-right: 10px;
+      img {
+        width: 100%;
+        border-radius: 50%;
+        border: 1px solid #dcdcdc;
+      }
+    }
+    .date {
+      font-size: 12px;
+      width: calc(100% - 60px);
+      float: right;
+    }
+  }
+  .messages {
+    width: 100%;
+    padding: 5px;
+    ul {
+      width: 100%;
+      padding: 0;
+      margin: 0px;
+      list-style: none;
+      li {
+        width: 70%;
+        text-align: justify;
+        margin-bottom: 25px;
+        &.left {
+          float: left;
+          .ico {
+            float: left;
+          }
+          & .message {
+            float: left;
+          }
+        }
+        &.right {
+          float: right;
+          .ico {
+            float: right;
+            margin-left: 10px;
+            margin-right: auto;
+          }
+          & .message {
+            float: right;
+            background-color: #782a1d;
+            color: #fff;
+          }
+        }
+        .message {
+          width: calc(100% - 60px);
+          border: 1px solid #ddd;
+          border-radius: 25px;
+          padding: 10px;
+          background-color: #f7f7f7;
+          color: #782a1d;
+          @media (max-width: 991px) {
+            width: 100%;
+          }
+        }
+
+        @media (max-width: 991px) {
+          width: 100%;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .user-list {
+    list-style: none;
+    padding: 0px;
+    li {
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+      &.selected {
+        background-color: #a27f47;
+        color: #fff;
+      }
+    }
+  }
+  .right {
+    .date {
+      float: left;
+      text-align: right;
+    }
+    .message {
+      background-color: #f00;
+      color: #fff;
+    }
+  }
+}

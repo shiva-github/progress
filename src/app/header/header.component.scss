@@ -1,0 +1,77 @@
+.header a {
+	text-decoration: none;
+}
+.opacity {
+	background-color: rgba(248, 249, 250, 0.8) !important;
+}
+.sub-menu {
+	display: none;
+	position: absolute;
+    z-index: 100;
+    right: 0px;
+    background-color: #fff;
+    top: 42px;
+    box-shadow: 0px 4px 7px 1px #ddd;
+    list-style: none;
+    width: 180px;
+    padding-left: 0px;
+}
+.navbar {
+	padding: 0;
+}
+.navbar-brand {
+	padding: 5px 20px;
+}
+.nav-item a {
+	padding: 10px 20px;
+}
+.nav-item:hover > a {
+	background-color: #ebca97;
+	color: #333;
+}
+li.nav-item:hover .sub-menu {
+	display: block;
+}
+.sub-menu li a{
+	padding: 10px 15px;
+}
+.sub-menu li:hover a{
+	background-color: #ebca97;
+	color: #333;
+}
+.nav-item.active > a {
+	background-color: #be7437;
+    color: #fff;
+    text-decoration: none;
+}
+.navbar-toggler{
+	margin-right: 10px;
+	border: 1px solid #be7437;
+}
+
+
+
+.bell-ring {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

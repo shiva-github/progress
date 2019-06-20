@@ -1,0 +1,56 @@
+<div class="container chat-section">
+	<div class="card">
+		<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+		<div class="card-body">
+			<h5 class="card-title heading-border">Messaging</h5>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="card">
+            <div class="card-header"><input type="search" placeholder="search" class="form-control search-user" [(ngModel)]="searchChatUser" (keyup)="searchUserForMsg($event);" /></div>
+            <div class="card-body inner-card-body">
+              <ul class="user-list">
+                <li *ngFor="let user of users;let i = index;" [ngClass]="{selected: user.active}" (click)="selectedUser(i, user.id)">
+                  <div class="single-user">
+                    <div class="ico"><img src="{{user.img}}" class="user-icon-chat"></div>
+                    <div class="name">{{user.name}}</div>
+                    <div class="status">{{user.status}}</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+				</div>
+				<div class="col-lg-8 col-md-6 col-sm-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="single-user">
+								<div class="ico"><img src="/assets/images/userico2.png" class="user-icon-chat"></div>
+								<div class="name">{{selectedUserData.name}}</div>
+								<div class="status">{{selectedUserData.status}}</div>
+								<!-- <div class="typing-msg">User is typing...</div> -->
+							</div>
+						</div>
+						<div class="card-body inner-card-body" #scrollWrapper>
+							<div class="messages" #scrollDiv>
+								<ul>
+									<li *ngFor="let message of messages;let i = index;" [ngClass]="{left: message.left, right: message.right}">
+										<div class="single-user">
+											<div class="ico"><img src="{{message.img}}" class="user-icon-chat"></div>
+											<div class="message">
+												{{message.msg}}
+											</div>
+											<div class="date">{{message.time}}</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-footer">
+							<input type="text" placeholder="Enter your message" [(ngModel)]="text" [disabled]="selectedUserData.id == 0" (keyup)="sendMsg($event)" class="form-control user-msg-box" /><button class="form-control submit-msg" [disabled]="selectedUserData.id == 0"><img src="/assets/images/send-button.png" (click)="send()"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

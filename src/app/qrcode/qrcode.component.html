@@ -1,0 +1,18 @@
+	<div class="container">
+			<div class="card">
+				<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+				<div class="card-body">
+					<h5 class="card-title heading-border">QR CODE AND LINK</h5>
+					<div class="row">
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<p>Enter Data: </p>
+							<p><input type="text" [(ngModel)]="conversionData" (change)="detectUrl()" /></p>
+						</div>
+						<div class="col-lg-8 col-md-6 col-sm-12">
+							<ngx-qrcode [qrc-value] = "conversionData" qrc-class = "aclass" qrc-errorCorrectionLevel = "L"></ngx-qrcode>
+						</div>
+					</div>
+					<span *ngIf="show_url" ><span>Link: </span> <a target="_blank" [attr.href]="conversionData" class="link">{{conversionData}}</a></span>
+				</div>
+			</div>
+		</div>

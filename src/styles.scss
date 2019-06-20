@@ -1,0 +1,75 @@
+/*
+.....Sandstorm Color Palette......
+#be7437 (190,116,55)
+#782a1d (120,42,29)
+#1c0f09 (28,15,9)
+#ebca97 (235,202,151)
+#a27f47 (162,127,71)
+*/
+/* You can add global styles to this file, and also import other style files */
+body {
+	/*background-image: url(assets/images/background.jpg);*/
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-color: #a27f47;
+
+}
+html, body {
+ margin:0;
+ padding:0;
+ height:100%;
+}
+#container {
+ min-height:100%;
+ position:relative;
+}
+#header {
+ background:#ff0;
+ padding:10px;
+}
+#body {
+ margin: 0px;
+ padding:10px;
+ padding-bottom:120px;   /* Height of the footer */
+}
+#footer {
+ position:absolute;
+ bottom:0;
+ width:100%;
+ height:105px;   /* Height of the footer */
+ background-color: #782a1d;
+ color: #fff;
+}
+
+@media (max-width: 767px) {
+	body {
+		background-size: 100% 100%;
+	}
+}
+.projects-main {
+  .card-header {
+    cursor: pointer !important;
+  }  
+}
+
+a {
+  color: #be7437;
+  text-decoration: underline;
+}
+a:hover {
+  color: #782a1d;
+}
+.btn-primary.custom-btn {
+  background-color: #782a1d;
+  border-color: #782a1d;
+  box-shadow: none !important;
+}
+.heading-border {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.breadcrumb {
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
+ font-size: 12px; 
+}
