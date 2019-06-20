@@ -58,9 +58,13 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<label>Task Title: </label><br>
 					<input type="text" class="form-control" placeholder="title" [(ngModel)]='taskName'>
+				</div>
+				<div class="col-md-6">
+					<label>Assign To: </label><br>
+					<input type="text" class="form-control" placeholder="Assign this task to ..." [(ngModel)]='taskAssignedTo'>
 				</div>
 				<div class="col-md-12 mt-3 mt-2">
 					<label>Task Description: </label><br>

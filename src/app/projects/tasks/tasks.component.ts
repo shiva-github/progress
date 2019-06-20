@@ -15,6 +15,7 @@ export class TasksComponent implements OnInit {
 	last_page_task: any;
 	taskName: any;
 	taskDescription: any;
+	taskAssignTo: any;
 	project_name: string;
 	constructor(private _tasksService: TasksService, private route: ActivatedRoute, private router: Router) {
 		this.project_name = '';
